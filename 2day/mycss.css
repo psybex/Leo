@@ -1,0 +1,38 @@
+html{
+    height: 100%;
+}
+body{
+    background-color: burlywood;
+    height: 100%;
+}
+div{
+    border: black solid;
+    /*display: inline;*/          /* div 를 span 처럼 inline 스타일로 변경하는 기능!!!  -> 이 경우 크기 설정 불가 */
+    display: inline-block;
+    width: 150px;
+    border-radius: 10%;
+}
+div{
+    font-size: 30px;
+    color: violet;
+    text-align: center;
+    padding: 5%;
+    margin-top: 2%;
+    float:left;
+}
+.mkclass{
+    font-size: 20px;
+    color: black;
+    border: red solid;
+}
+#testid{
+    font-size: 40px;
+    border: brown solid;
+}
+/* div 백그라운드 */
+.back{
+    background-color: white;
+}
+.clear_class{
+    clear: both;
+}
