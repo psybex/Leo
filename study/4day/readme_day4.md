@@ -4,8 +4,11 @@
 python3 사용 환경 세팅하기!!!
 python 환경변수 세팅하기
 
+가상머신 생성 (나는 python 두개깔려서 선택해야함)
+> python3 -m venv myvenv          myvenv : 생성할 가상머신 이름
+
 가상머신 on
-> source ./myvenv/bin/activate
+> source myvenv/bin/activate
 
 가상머신 off
 > deactivate
@@ -16,7 +19,7 @@ python 모듈 관리 툴  pip
 장고설치
 > pip install django==2.2.7
 
-"firstproject" 이름의 장고 프로젝트 생성
+"firstproject" 이름의 장고 첫 프로젝트 생성
 > django-admin startproject firstproject
 
 장고 웹서버 실행

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'testapp.apps.TestappConfig',
+    'testapp.apps.TestappConfig',       # 프로젝트 생성시 apps.py 파일의 함수 경로 추가
 ]
 
 MIDDLEWARE = [
