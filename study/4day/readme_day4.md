@@ -22,6 +22,9 @@ python 모듈 관리 툴  pip
 "firstproject" 이름의 장고 첫 프로젝트 생성
 > django-admin startproject firstproject
 
+앱만들기
+> python manage.py startapp blog(앱이름) 
+
 장고 웹서버 실행
 > python manage.py runserver
 > control + c    서버종료
@@ -30,6 +33,7 @@ python 모듈 관리 툴  pip
 
 > firstproject > setting.py 파일안의
 > INSTALLED_APPS 에 'testapp.apps.TestappConfig',   추가
+> apps.py 안의 클래스이름임
 
 2. root화면 추가
 
