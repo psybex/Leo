@@ -11,5 +11,14 @@
     <a href="{% url 'index' %}">
         <h2>홈으로</h2>
     </a>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{myform.as_p}}
+        
+        <input type="submit" value = "제줄하시겠습니까?">
+
+    </form>
+    
 </body>
 </html>

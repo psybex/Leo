@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import MyBlog
+from .forms import PostForm
 
 # Create your views here.
 
@@ -15,4 +16,8 @@ def index(request):
 
 def other(request):
     
-    return render(request, 'other.html')
+    myform = PostForm()
+
+    context = {"myform" : myform}
+
+    return render(request, 'other.html', context)
