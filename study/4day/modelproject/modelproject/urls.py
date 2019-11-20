@@ -21,4 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),    # path('기본 url 뒤에 붙는 url', '기본화면 호출 view 함수', 'alias')
     path('otherpage', views.other, name="other"),    # path('기본 url 뒤에 붙는 url', '기본화면 호출 view 함수', 'alias')
+    path('posting', views.posting, name="posting"),  
+    path('detail/<int:post_id>', views.detail, name="detail"),  
+    path('update/<int:post_id>', views.update, name="update"),  
+    path('delete/<int:post_id>', views.delete, name="delete"),  
 ]

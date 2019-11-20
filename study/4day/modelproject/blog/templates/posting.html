@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Posting</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">
+        <h2>홈으로</h2>
+    </a>
+
+    <h1>글쓰기창입니다.</h1>
+    
+
+    
+
+    <form method="post">
+        {% csrf_token%}
+        <h1>글쓰기공간</h1>
+        {{myform2.as_ul}}
+        <input type="submit" value="글쓰기">
+
+    </form>
+
+</body>
+</html>

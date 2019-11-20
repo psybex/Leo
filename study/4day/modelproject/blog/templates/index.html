@@ -11,9 +11,17 @@
     <a href="{% url 'other' %}">
         <h2>다음페이지 테스트</h2>
     </a>
+    <a href="{% url 'posting' %}">
+        <h2>글쓰기창</h2>
+    </a>
     <h2>{{get_blog_all}}</h2>     <!-- Django templates value -->
     {% for blog in get_blog_all %}
-        <h5>제목 : {{blog.title|upper}}</h5>
+        <h5>
+            제목 : <a href="{% url 'detail' blog.id %}">{{blog.title|upper}}</a>
+        </h5>
+        <a href="{% url 'update' blog.id %}">글수정</a> <a href="{% url 'delete' blog.id %}">글삭제</a>
+        <br>
+        <br>
         내용 : {{blog.desc}}<br>
         생성일자 : {{blog.cre_date}}
         <hr>

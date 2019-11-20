@@ -6,3 +6,12 @@ class PostForm(forms.ModelForm):
         model = MyBlog
 
         fields = ('title', 'desc',)
+
+class PostForm2(forms.ModelForm):
+
+    class Meta:
+        model = MyBlog
+
+        fields = ('title', 'desc',)
+
+        
