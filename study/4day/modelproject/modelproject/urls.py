@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from blog import views # 이부분 확인 blog views import
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +27,4 @@ urlpatterns = [
     path('detail/<int:post_id>', views.detail, name="detail"),  
     path('update/<int:post_id>', views.update, name="update"),  
     path('delete/<int:post_id>', views.delete, name="delete"),  
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

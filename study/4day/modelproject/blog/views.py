@@ -29,7 +29,8 @@ def posting(request):
     myform2 = PostForm2()
 
     if request.method == "POST" :
-        myform2 = PostForm2(request.POST)
+        #myform2 = PostForm2(request.POST)
+        myform2 = PostForm2(request.POST, request.FILES)
         if myform2.is_valid:
             myform2.save()
             return redirect('index')               # redirect import 하고 사용해야함!!
@@ -45,6 +46,7 @@ def posting(request):
 
 def detail(request, post_id):
     # 제목 링크에 대한 detail page를 생성
+    #post_one = MyBlog.objects.get(id = post_id)
     post_one = get_object_or_404(MyBlog, id = post_id)
 
     context = {"post_one":post_one}
@@ -56,7 +58,7 @@ def update(request, post_id):
     my_post_one = get_object_or_404(MyBlog, id = post_id)
 
     if request.method == "POST" :
-        myform2 = PostForm2(request.POST, instance=my_post_one)
+        myform2 = PostForm2(request.POST, instance=my_post_one)  # instance : my_post_one라는 data를 default로 불러온다
         if myform2.is_valid:
             myform2.save()
             return redirect('index')               # redirect import 하고 사용해야함!!
