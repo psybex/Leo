@@ -7,6 +7,7 @@ class MyBlog(models.Model):
     desc = models.TextField(max_length=20000)
     cre_date = models.DateField(default = timezone.now)
     myimage = models.ImageField(blank = True)
+    #mymedia = models.FileField(upload_to='post',default='Hello')
 
     def __str__(self):
         return self.title
