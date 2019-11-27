@@ -15,6 +15,23 @@
         <h2>다음페이지 테스트</h2>
     </a>
     -->
+    {% if user.is_authenticated %}
+        <h2>{{user.username}}님 환영합니다.</h2>
+
+        <a href="{% url 'logout' %}">
+            <h2>로그아웃</h2>
+        </a>
+    {%else%}
+        <a href ="{% url 'sign_up' %}">
+            <h2>회원가입</h2>
+        </a>
+    
+        <a href="{% url 'login' %}">
+            <h2>로그인</h2>
+        </a>
+    {% endif %}
+
+
     <a href="{% url 'posting' %}">
         <h2>글쓰기창</h2>
     </a>

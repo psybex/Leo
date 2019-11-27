@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import MyBlog
 from .forms import PostForm
 from .forms import PostForm2
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -53,6 +54,7 @@ def detail(request, post_id):
 
     return render(request, 'detail.html', context)
 
+@login_required  # 상단에 import필요함  함수 실행전 login 확인
 def update(request, post_id):
 
     my_post_one = get_object_or_404(MyBlog, id = post_id)
@@ -71,7 +73,7 @@ def update(request, post_id):
 
     return render(request, 'update.html', context)
 
-
+@login_required
 def delete(request, post_id):
 
     my_post_one = get_object_or_404(MyBlog, id = post_id)

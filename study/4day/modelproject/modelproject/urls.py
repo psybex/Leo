@@ -18,6 +18,9 @@ from django.urls import path
 from blog import views # 이부분 확인 blog views import
 from django.conf import settings
 from django.conf.urls.static import static
+from myaccount import views as account_views
+
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +30,7 @@ urlpatterns = [
     path('detail/<int:post_id>', views.detail, name="detail"),  
     path('update/<int:post_id>', views.update, name="update"),  
     path('delete/<int:post_id>', views.delete, name="delete"),  
+    path('myaccount/sign_up', account_views.sign_up, name="sign_up"),
+    path('myaccount/login', LoginView.as_view(), name="login"),
+    path('myaccount/logout', LogoutView.as_view(), name="logout"),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
